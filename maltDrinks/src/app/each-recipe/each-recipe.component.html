@@ -1,0 +1,9 @@
+<a [routerLink]="['/manufacturer/recipe', product.recipe_id]" class="cardOfProduct">
+    <div class="placeForPhoto">
+        <img [src]="'data:image/png;base64,' + product.path" [alt]="product.name" width="200px">
+    </div>
+    <div class="text">
+        <p>{{product.name}}</p>
+        <p>{{product.description}}</p>
+    </div>
+  </a>
