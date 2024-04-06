@@ -30,6 +30,7 @@ import { RecipesComponent } from './recipes/recipes.component';
 import { EachRecipeComponent } from './each-recipe/each-recipe.component';
 import { RecipeComponent } from './recipe/recipe.component';
 import { RecipePageComponent } from './recipe-page/recipe-page.component';
+import { RecipeComponentComponent } from './recipe-component/recipe-component.component';
 
 @NgModule({
   declarations: [
@@ -57,7 +58,8 @@ import { RecipePageComponent } from './recipe-page/recipe-page.component';
     RecipesComponent,
     EachRecipeComponent,
     RecipeComponent,
-    RecipePageComponent
+    RecipePageComponent,
+    RecipeComponentComponent
   ],
   imports: [
     BrowserModule,

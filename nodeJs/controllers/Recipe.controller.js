@@ -14,6 +14,20 @@ class Recipe {
         res.json(DB_answer.rows)
     }
 
+    async updateProductRecipe(req, res) {
+        const body = req.body
+        const DB_answer = await db.query(sql.updateProductRecipe(body))
+        
+        res.json(DB_answer.rows)
+    }
+
+
+    async updateRecipe(req, res) {
+        const body = req.body
+        const DB_answer = await db.query(sql.updateRecipe(body))
+        
+        res.json(DB_answer.rows)
+    }
 }
 
 module.exports = new Recipe()

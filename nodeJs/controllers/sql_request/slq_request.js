@@ -45,6 +45,7 @@ const getInfoForProduct = (id)=>{
 const getProductForRecipe = (id) =>{
     return `
     select 
+        p.product_id,
     	p.name,
     	concat(amount_product, ' ', type) as amount_product
     from recipes_products as rp
@@ -251,6 +252,26 @@ const deleteRecipe = (id) => {
     returning *`
 }
 
+const updateProductRecipe = (data) => {
+    return `
+    update recipes_products
+    set amount_product = ${data.amount_product}
+    where recipe_id = ${data.recipe_id} and product_id = ${data.product_id} 
+    returning *`
+}
+
+const updateRecipe = (data) => {
+    return `
+    update recipes 
+    set name = '${data.name}', description = '${data.description}'
+    where recipe_id = ${data.recipe_id} 
+    returning *`
+}
+
+const getCartLength = (id) => {
+    return `
+    select * from cart where customer_id = ${id}`
+}
 
 module.exports = {
     getAllProducts,
@@ -274,5 +295,8 @@ module.exports = {
     createRecipes,
     getRecipes,
     addToMetadata,
-    deleteRecipe
+    deleteRecipe,
+    updateProductRecipe,
+    updateRecipe,
+    getCartLength
 }

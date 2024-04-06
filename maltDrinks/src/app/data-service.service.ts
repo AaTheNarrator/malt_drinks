@@ -103,4 +103,12 @@ export class DataService {
     getRecipes(data : any):Observable<any>{
         return this.http.post("http://localhost:8000/api/getAllRecipe", data)
     }
+
+    updateProductRecipe(data : any){
+        return this.http.put('http://localhost:8000/api/updateProductRecipe',data).subscribe((data)=>{})
+    }
+
+    updateRecipe(data : any){
+        return this.http.put('http://localhost:8000/api/updateRecipe',data).subscribe((data)=>{})
+    }
 }

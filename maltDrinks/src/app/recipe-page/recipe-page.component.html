@@ -1,1 +1,20 @@
-<p>recipe-page works!</p>
+<div class="container">
+    <div class="upper">
+        <div class="placeForPhoto">
+            <img [src]="'data:image/png;base64,' + dataOfProduct.image" [alt]="dataOfProduct.name">
+        </div>
+        <div class="allInfo">
+            <input type="text" [(ngModel)]="dataOfProduct.product_name">
+            
+            <h2>Состав:</h2>
+            <div class="composition">
+                <app-recipe-component *ngFor="let product of dataOfProduct.products" [product]="product"></app-recipe-component>
+            </div>
+        </div>
+    </div>
+    <div class="lower">
+        <h2>Описание:</h2>
+        <textarea [(ngModel)]="dataOfProduct.description"></textarea>
+    </div>
+    <button (click)="save()">Сохранить</button>
+</div>

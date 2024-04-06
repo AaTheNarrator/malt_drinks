@@ -37,6 +37,13 @@ class Cart {
         res.json(DB_answer.rows)
     }
 
+
+    async getCartLength(req, res){
+        const id = req.body.customer_id
+        console.log(id)
+        const DB_answer = await db.query(sql.getCartLength(id))
+        res.json({"length" : DB_answer.rows.length})
+    }
 }
 
 module.exports = new Cart()

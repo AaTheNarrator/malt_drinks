@@ -9,6 +9,9 @@
     "pg": "^8.11.3"
   },
   "devDependencies": {
+    "chai": "^5.1.0",
+    "mocha": "^10.4.0",
+    "supertest": "^6.3.4",
     "typescript": "^5.0.4"
   }
 }

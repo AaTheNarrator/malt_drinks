@@ -29,3 +29,4 @@ app.listen(port, () => {
   console.log("Server was started")
 })
 
+module.exports = app;
